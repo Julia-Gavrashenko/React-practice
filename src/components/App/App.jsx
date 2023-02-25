@@ -1,5 +1,7 @@
 import article from '../../data/article.json';
 import data from '../../data/data.json';
+import forbes from '../../data/forbes.json';
+import transactions from '../../data/transactions.json';
 
 import {
   BlogCard,
@@ -12,8 +14,6 @@ import {
 } from 'components';
 
 export const App = () => {
-
-
   return (
     <Section>
       <Container>
@@ -21,31 +21,27 @@ export const App = () => {
           Task 1
         </Heading>
         <BlogCard
-  poster={article.poster}
-  tag={article.tag}
-  title={article.title}
-  description={article.description}
-  userName={article.name}
-  avatar={article.avatar}
-  postedAt={article.postedAt}
-/>;
-
+          poster={article.poster}
+          tag={article.tag}
+          title={article.title}
+          description={article.description}
+          userName={article.name}
+          avatar={article.avatar}
+          postedAt={article.postedAt}
+        />
+        ;
         <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 2
         </Heading>
-        <Statistics
-          title="Main Statistics"
-          stats={data} />
-
+        <Statistics title="Main Statistics" stats={data} />
         <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 3
         </Heading>
-        <ForbesList />
-
+        <ForbesList list={forbes} />
         <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 4
         </Heading>
-        <CryptoHistory />
+        <CryptoHistory transactions={transactions} />
       </Container>
     </Section>
   );
